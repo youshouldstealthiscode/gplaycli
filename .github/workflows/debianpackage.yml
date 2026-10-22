@@ -9,7 +9,7 @@ jobs:
   deb:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
     - name: Install dependencies
       run: |
         sudo sed -i 's/bionic/disco/g' /etc/apt/sources.list
@@ -21,7 +21,7 @@ jobs:
     - name: Build Debian package
       run: sudo make deb
     - name: Upload deb file
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@3446296876d12d4e3a0f3145a3c87e67bf0a16b5 # v1
       with:
         name: gplaycli_${{env.VERSION}}_all.deb
         path: packages/gplaycli_${{env.VERSION}}_all.deb
